@@ -5,7 +5,10 @@ import os
 
 # Carregar variáveis de ambiente
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+import streamlit as st
+
+api_key = st.secrets["OPENAI_API_KEY"]
+
 cliente = OpenAI(api_key=api_key)
 modelo = "gpt-4"
 
